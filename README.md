@@ -70,14 +70,6 @@ I selected possible best parameters and architecture to achieve a good accuracy.
 
 All development was done on Windows with conda.
 
-You can either recreate my environment by
-```bash
-conda env create -f env_project.yml
-conda activate project
-```
-
-or do it on your own environment.
-
 Download repo
 ```bash
 https://github.com/dimzachar/capstone_mlzoomcamp.git
