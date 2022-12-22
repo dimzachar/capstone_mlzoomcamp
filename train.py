@@ -62,7 +62,9 @@ print(f"seaborn version : {sns.__version__}")
 print(f"scikit-learn version  : {sklearn.__version__}")
 print(f"tensorflow version  : {tf.__version__}")
 
-
+# if gpu
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
 # Set paths
 train_dir = './Images/train/'
