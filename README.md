@@ -263,7 +263,9 @@ Make sure you remove/delete everything after testing if necessary.
 
 Video of cloud deployment 
 
-https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/shells.mp4
+
+https://user-images.githubusercontent.com/113017737/209078429-1038914d-f64f-40d3-a97e-70033a4266d4.mp4
+
 
 That's a wrap!
 
