@@ -29,6 +29,7 @@ Repo contains the following:
 * Script `lambda-function.py` for predictions. The script is formatted for deployment on Amazon Web Services' Lambda.
 * `notebook.ipynb` a Jupyter Notebook with the data analysis and models
 * Script `test.py` for testing
+* test.json where you can copy any json event to test
 * Script `train.py`
   * Training the final model
 * Instructions for Production deployment
@@ -149,7 +150,7 @@ Images
 ```
 
 
-To open the `notebook.ipynb` and see what is inside (optional), run jupyter
+To open the `notebook.ipynb` and see what is inside (optional - running the whole thing would probably take min 2 hours), run jupyter
 
 ```bash
 pipenv run jupyter notebook
@@ -167,7 +168,7 @@ pipenv run python train.py
 ```
 
 Note: 
-* Ignore if you get any warnings (you shouldn't get but in any case) and wait till you see the message <code>Finished</code>. In the end you will have a <code>model.tflite</code> file in the directory. You can also find the best model in .h5 format inside the <code>checkpoints</code> folder.
+* Ignore if you get any warnings and wait till you see the message <code>Finished</code>. In the end you will have a <code>model.tflite</code> file in the directory. You can also find the best model in .h5 format inside the <code>checkpoints</code> folder.
 * If you don't want to run <code>train.py</code> (even though you should) there are files in folder <code>Extra_models</code> in <code>.h5</code> and <code>.tflite</code> format. I have no responsibility if they work (I guess they do).
 
 ## Production deployment
