@@ -9,7 +9,7 @@
  * [Description of the problem](#description-of-the-problem)
  * [Project Objectives](#project-objectives)
  * [Local deployment](#local-deployment)
- * [Production deployment](#production-deployment-with-bentoml)
+ * [Production deployment](#production-deployment)
    * [Docker container](#docker-container)
    * [Cloud deployment](#cloud-deployment)
  * [More](#what-else-can-i-do)

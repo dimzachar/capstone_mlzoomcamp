@@ -1,4 +1,4 @@
-## Documentation
+# Documentation
 
 <h1>build_model</h1>
 
