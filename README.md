@@ -75,7 +75,7 @@ All development was done on Windows with conda.
 You can create an environment
 ```bash
 conda env create -f env_project.yml
-conda activate test
+conda activate capstone
 ```
 
 Download repo
