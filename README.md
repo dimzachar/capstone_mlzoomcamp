@@ -12,7 +12,6 @@
  * [Production deployment](#production-deployment-with-bentoml)
    * [Docker container](#docker-container)
    * [Cloud deployment](#cloud-deployment)
- * [Further development](#further-development)
  * [More](#what-else-can-i-do)
 
 
@@ -157,6 +156,8 @@ pipenv run jupyter notebook
 ```
 
 
+
+
 For the evaluation you would need to run <code>train.py</code>. This, will run the train function and construct a ML model with best parameters which will be saved in <code>checkpoints</code> folder (it will be created automatically). The model with highest validation accuracy will be loaded, evaluated (it will return some metrics) and then converted to a Tensorflow Lite model in order to deploy it in the cloud later.
 Note: If you run it on a CPU it will take some time (minimum 20 minutes). It is a good idea to use a GPU to speed up the training process. 
 
@@ -169,6 +170,7 @@ Note:
 * Ignore if you get any warnings (you shouldn't get but in any case) and wait till you see the message <code>Finished</code>. In the end you will have a <code>model.tflite</code> file in the directory. You can also find the best model in .h5 format inside the <code>checkpoints</code> folder.
 * If you don't want to run <code>train.py</code> (even though you should) there are files in folder <code>Extra_models</code> in <code>.h5</code> and <code>.tflite</code> format. I have no responsibility if they work (I guess they do).
 
+## Production deployment
 
 
 ### Docker container
