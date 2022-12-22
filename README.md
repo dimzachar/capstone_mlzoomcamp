@@ -17,22 +17,24 @@
 
 Repo contains the following:
 
+* Extra folder with the project images
+* Extra_models folder with best models in `.h5` and `.tflite` format
+* `Dockerfile` for building the docker image
+* Documentation with code description
 * `README.md` with
   * Description of the problem
   * Instructions on how to run the project
-* `notebook.ipynb` a Jupyter Notebook with the data analysis and models
-* Script `train.py` (suggested name)
-  * Training the final model
+* `create_directories.py` that splits the data to train, val, test folders
+* Dependencies
 * Script `lambda-function.py` for predictions. The script is formatted for deployment on Amazon Web Services' Lambda.
-* final model .h5
-* Files with dependencies
-  * `env_project.yml` conda environment (optional)
+* `notebook.ipynb` a Jupyter Notebook with the data analysis and models
+* Script `test.py` for testing
+* Script `train.py`
+  * Training the final model
 * Instructions for Production deployment
   * Video or image of how you interact with the deployed service
-* Documentation with code description
-* The original dataset can be downloaded from [Kaggle](https://www.kaggle.com/datasets/vencerlanz09/shells-or-pebbles-an-image-classification-dataset)
 
-
+Dataset is from Kaggle and will be given instructions later how to download.
 
 ## Description of the problem
 
@@ -70,6 +72,12 @@ I selected possible best parameters and architecture to achieve a good accuracy.
 
 All development was done on Windows with conda.
 
+You can create an environment
+```bash
+conda env create -f env_project.yml
+conda activate test
+```
+
 Download repo
 ```bash
 https://github.com/dimzachar/capstone_mlzoomcamp.git
@@ -78,8 +86,8 @@ https://github.com/dimzachar/capstone_mlzoomcamp.git
 Notes: 
 * You can git clone the repo in Saturn Cloud instead of running it in your own pc. 
 * Just make sure you have set it up, see [here](https://github.com/dimzachar/mlzoomcamp/blob/master/Notes/saturn.md). Create secrets for Kaggle in order to download the data.
-* You don't need pipenv if you use Saturn Cloud
-* See instructions below for more
+* You don't need pipenv if you use Saturn Cloud.
+* See instructions below for more.
 * You can access the environment here
 [![Run in Saturn Cloud](https://saturncloud.io/images/embed/run-in-saturn-cloud.svg)](https://app.community.saturnenterprise.io/dash/o/community/resources?templateId=80e7a844ff5649d2a17552f9aa66628d)
 
