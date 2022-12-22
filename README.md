@@ -18,7 +18,7 @@
 Repo contains the following:
 
 * Extra folder with the project images
-* Extra_models folder with best models in `.h5` and `.tflite` format
+* Extra_models folder with best models in `.h5` and `.tflite` format (it is advised that you train the model from the start and not copy these)
 * `Dockerfile` for building the docker image
 * Documentation with code description
 * `README.md` with
