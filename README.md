@@ -1,7 +1,7 @@
 ## Capstone Project mlzoomcamp Image Classification 
 
 <p align="center">
-<img src="https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/collage.jpg">
+<img src="https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/collage.jpg">
 </p>
 
 
@@ -61,7 +61,7 @@ Potential objectives for this project include:
 * Utilize TensorBoard to visualize the training process and find trends or patterns in the data (I didn't make use of this in the end).
 * Use the trained model to accurately categorize new photos as Shells or Pebbles.
 * Deploy the trained model in a production environment.
-* Create comprehensive [Documentation](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/01-capstone_project/Documentation.md) for the project, including a detailed description of the model architecture, training procedure and deployment.
+* Create comprehensive [Documentation](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Documentation.md) for the project, including a detailed description of the model architecture, training procedure and deployment.
 * Display the project's outcomes in a more professional way.
 
 
@@ -81,7 +81,7 @@ or do it on your own environment.
 
 Download repo
 ```bash
-git clone https://github.com/dimzachar/mlzoomcamp_projects.git
+https://github.com/dimzachar/capstone_mlzoomcamp.git
 ```
 
 Notes: 
@@ -98,7 +98,7 @@ For the virtual environment, I utilized pipenv.
 If you want to use the same venv as me, install pipenv and dependencies, navigate to the folder with the given files:
 
 ```bash
-cd 01-capstone_project
+cd capstone_mlzoomcamp
 pip install pipenv
 pipenv shell
 pipenv install numpy pandas seaborn jupyter plotly scipy tensorflow==2.9.1 scikit-learn==1.1.3 tensorflow-gpu
@@ -111,12 +111,12 @@ kaggle config set -n api.key -v YOUR_API_KEY
 
 kaggle datasets download -d vencerlanz09/shells-or-pebbles-an-image-classification-dataset -p Images
 ```
-![kaggle](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/kaggle.png)
+![kaggle](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/kaggle.png)
 
-If you run it on Saturn Cloud make sure you are inside <code>/tensorflow/mlzoomcamp_projects/01-capstone_project</code>.
+If you run it on Saturn Cloud make sure you are inside <code>/tensorflow/capstone_mlzoomcamp</code>.
 
 
-This will download the zip file inside folder named Images. Then, unzip it inside this folder manually or using git bash and delete the zip file. Since you are inside 01-capstone_project folder do
+This will download the zip file inside folder named Images. Then, unzip it inside this folder manually or using git bash and delete the zip file. Since you are inside capstone_mlzoomcamp folder do
 ```bash
 unzip -q Images/shells-or-pebbles-an-image-classification-dataset.zip -d Images
 rm Images/shells-or-pebbles-an-image-classification-dataset.zip
@@ -195,7 +195,7 @@ The function returns a dictionary with a single key-value pair, where the key is
 
 For example, if the value of pred is 0.7, the class label will be "Shells" and the prediction value will be 0.7. If the value of pred is 0.3, the class label will be "Pebbles" and the prediction value will be 0.7.
 
-![local](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/testing_local.png)
+![local](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/testing_local.png)
 
 
 ### Cloud deployment 
@@ -205,10 +205,10 @@ In order to deploy it to AWS we push the docker image. Make sure you have an acc
 First, create a repository on Amazon Elastic Container Registry (ECR) with an appropriate name
 ![registry2](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/00-midterm_project/Images/Elastic-Container-Registry%20(2).png)
 
-![registry](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/Elastic-Container-Registry.png)
+![registry](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/Elastic-Container-Registry.png)
 
 You will find the push commands there to tag and push the latest docker image
-![ECR](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/Elastic-Container-push.png)
+![ECR](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/Elastic-Container-push.png)
 
 which you find on your system with
 
@@ -219,25 +219,25 @@ pipenv run docker images
 Next, we publish to AWS Lambda.
 
 Go to AWS Lambda, create function, select container image and add a name. Then, browse your image and finally hit create function 
-![function](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/Create-function-Lambda.png)
+![function](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/Create-function-Lambda.png)
 
 Go to configuration, change timeout to 30 seconds and increase memory RAM (e.g. 1024)
-![settings](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/Edit-basic-settings-Lambda.png)
+![settings](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/Edit-basic-settings-Lambda.png)
 
 Test the function by changing the event json
-![eventjson](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/event-json.png)
+![eventjson](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/event-json.png)
 
 Expose the lambda function using API Gateway. Go to API Gateway, select REST API and build a new API
-![apigate](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/API-Gateway.png)
+![apigate](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/API-Gateway.png)
 
 Create a new API, give a name
-![apigatecreate](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/API-Gateway-Create-API.png)
+![apigatecreate](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/API-Gateway-Create-API.png)
 
 Create new resource, name it predict
-![apiresource](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/api_resource.png)
+![apiresource](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/api_resource.png)
 
 Create new method, select POST and hit click. Choose Lambda function as integration type and on Lambda function give the name of the function you created and hit save 
-![post](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/post.png)
+![post](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/post.png)
 
 Hit Test, add a JSON document on request body
 ```bash
@@ -246,22 +246,22 @@ Hit Test, add a JSON document on request body
 
 or other image
 
-![posttest](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/post_test.png)
-![testjson](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/test-json.png)
+![posttest](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/post_test.png)
+![testjson](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/test-json.png)
 
 
 Hit Deploy on Actions, select New Stage and give a name
 
-![deployapi](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/deploy-api.png)
+![deployapi](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/deploy-api.png)
 
 Copy the invoke URL, put it in your /test.py file and run it
-![testinvoke](https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/test_invoke_url.png)
+![testinvoke](https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/test_invoke_url.png)
 
 Make sure you remove/delete everything after testing if necessary. 
 
 Video of cloud deployment 
 
-https://github.com/dimzachar/mlzoomcamp_projects/blob/master/Extra/shells.mp4
+https://github.com/dimzachar/capstone_mlzoomcamp/blob/master/Extra/shells.mp4
 
 That's a wrap!
 
